@@ -1,72 +1,73 @@
-import { styled } from "@/styles";
+import { styled } from "@/styles"
+import * as RadioGroup from '@radix-ui/react-radio-group';
 
-export const Wrapper = styled('div', {
+
+export const HomeWrapper = styled('div', {
+  padding: '$5',
+})
+
+export const MenuWrapper = styled('aside', {
+  height: 'calc(100vh - $space$10)', 
+  backgroundColor: '$gray700',
+  width: 232,
+  padding: '$10',
   display: 'flex', 
   alignItems: 'center',
-  justifyContent: 'space-between',
-  paddingLeft: '$5',
-  height: '100vh',
-})
-
-export const ImageWrapper = styled('div', {
-  width: 'calc((100vh - $space$5 - $space$5)/1.525)',
-  height: 'calc(100vh - $space$5 - $space$5)',
-  position: 'relative',
-})
-
-export const MainWrapper = styled('main', {
-  flex: 1,
-  display: 'flex', 
   flexDirection: 'column',
+  justifyContent: 'space-between'
+})
+
+export const MenuContentWrapper = styled('div', {
+  display: 'flex', 
   alignItems: 'center',
-  justifyContent: 'center',  
+  flexDirection: 'column',
 })
 
-export const ContentWrapper = styled('div', {
-  '&>h1': {
-    lineHeight: '$short',
-    fontSize: '$2xl', 
-    color: '$gray100',
-    fontWeight: '$bold',
-  },
-
-  '&>p': {
-    lineHeight: '$base',
-    fontSize: '$md', 
-    color: '$gray200',
-  },
-})
-
-export const ButtonsWrapper = styled('div', {
-  marginTop: '$10',
+export const MenuOptionWrapper = styled(RadioGroup.Root, {
+  marginTop: '4rem',
   display: 'flex', 
   flexDirection: 'column',
   gap: '$4',
-  width: 372,
 })
 
-export const LoginOptionButton = styled('button', {
+export const MenuOption = styled(RadioGroup.Item,{
   all: 'unset',
-  background: '$gray600',
-  padding: '$5 $6',
-  borderRadius: '$sm',
+  padding: '$2 0', 
   display: 'flex', 
   alignItems: 'center', 
-  justifyContent: 'flex-start', 
-  gap: '$5',
+  justifyContent: 'flex-start',
+  gap: '$3',
+  position: 'relative',
+  color: '$gray400' ,
+  width: 100,
   cursor: 'pointer',
 
-  '&:hover': {
-    background: '$gray500',
-  },
-
-  '&>span': {
-    color: '$gray200',
-    fontSize: '$lg', 
-    fontWeight: '$bold', 
-    lineHeight: '$base',
-  },
-  '&>svg': {
-    color: '$purple100',
+  '&[aria-checked="true"]': {
+    fontWeight: 'bold', 
+    color: '$gray100',
+    '&::before': {
+      content: '', 
+      width: 4, 
+      height: 24, 
+      backgroundImage: '$gradient-vertical',
+      position: 'absolute', 
+      left: -20,
+      borderRadius: '$full',
+    },
   },
 })
+
+export const LoginButton = styled('button', {
+  all: 'unset', 
+  color: '$gray200',
+  fontWeight: 'bold',
+  cursor: 'pointer',
+  display: 'flex', 
+  alignItems: 'center', 
+  justifyContent: 'center',
+  gap: '$3',
+})
+
+export const MainWrapper = styled('main', {})
+
+export const PopularWrapper = styled('aside', {})

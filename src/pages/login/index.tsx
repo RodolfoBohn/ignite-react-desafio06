@@ -4,8 +4,14 @@ import homeImg from '@/assets/home.png'
 import googleLogo from '@/assets/google-logo.svg'
 import githubLogo from '@/assets/github-logo.svg'
 import { RocketLaunch } from "phosphor-react";
+import { useRouter } from "next/router";
 
-export default function Home() {
+export default function Login() {
+  const router = useRouter()
+
+  const handleEntryAsVisitant = () => {
+    router.push('/home')
+  }
   return (
     <>
       <Wrapper>
@@ -25,7 +31,7 @@ export default function Home() {
             <Image src={githubLogo} alt="" width={32} height={32} />
               <span>Entrar com GitHub</span>
             </LoginOptionButton>
-            <LoginOptionButton>
+            <LoginOptionButton onClick={handleEntryAsVisitant}>
               <RocketLaunch size={32} />
               <span>Entrar como visitante</span>
             </LoginOptionButton>
