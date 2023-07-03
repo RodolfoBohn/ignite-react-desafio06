@@ -4,6 +4,7 @@ import * as RadioGroup from '@radix-ui/react-radio-group';
 
 export const HomeWrapper = styled('div', {
   padding: '$5',
+  display: 'flex',
 })
 
 export const MenuWrapper = styled('aside', {
@@ -14,7 +15,8 @@ export const MenuWrapper = styled('aside', {
   display: 'flex', 
   alignItems: 'center',
   flexDirection: 'column',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  // position: 'fixed',
 })
 
 export const MenuContentWrapper = styled('div', {
@@ -68,6 +70,80 @@ export const LoginButton = styled('button', {
   gap: '$3',
 })
 
-export const MainWrapper = styled('main', {})
+export const MainWrapper = styled('div', {
+  flex: 1,
+  display: 'flex', 
+  flexDirection: 'column', 
 
-export const PopularWrapper = styled('aside', {})
+  '&>h1': {
+    marginTop: '3.5rem',
+    marginLeft:'6rem',
+    marginBottom: '$10',
+    display: 'flex', 
+    alignItems: 'center', 
+    gap: '$3',
+
+    '&>svg': {
+      color: '$green100'
+    }, 
+    '&>span': {
+      color: '$gray100', 
+      size: '$2xl', 
+      lineHeight: '$short', 
+      fontWeight: '$bold',
+    },
+  },
+
+  '&>div': {
+  display: 'flex', 
+  },
+})
+
+export const RatingsWrapper = styled('main', {
+  display: 'flex', 
+  flexDirection: 'column', 
+  gap: '$3',
+  padding: '0 4rem 0 6rem',
+  // position: 'fixed',
+
+  '&>span': {
+    marginBottom: '$1', 
+    color: '$gray100',
+    fontSize: '$sm', 
+    lineHeight: '$short',
+  },
+})
+
+export const PopularWrapper = styled('aside', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '$3',
+})
+
+export const PopularBookWrapper = styled('div', {
+  padding: '$5 $4', 
+  borderRadius: '$sm',
+  backgroundColor: '$gray700',
+  display: 'flex',
+  gap: '$5',
+  width: 324,
+})
+
+export const PopuparBookTitleWrapper = styled('div', {
+  '&>h3': {
+    '-webkit-line-clamp': 2,
+    '-webkit-box-orient': 'vertical',
+    display: '-webkit-box',
+    overflow: 'hidden',
+    fontSize: '$md',
+    lineHeight: '$short',
+    fontWeight: 'bold',
+    color: '$gray100',
+  },
+
+  '&>p': {
+    color: '$gray400',
+    fontSize: '$sm',
+    lineHeight: '$base',
+  },
+})
